@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Cytochrome Investigation Department</h1>
+            <div class="header-controls">
+                <button id="notification-btn" class="secondary-btn" style="display: none;">Enable Notifications</button>
+                <button id="leave-btn">Leave Chat</button>
+            </div>
+        </header>
+        <div class="main-container">
+            <div id="user-list-sidebar">
+                <h3>Members</h3>
+                <ul id="users"></ul>
+            </div>
+            <div id="chat-window">
+                <!-- Messages will appear here -->
+            </div>
+        </div>
+        <div id="input-area">
+            <form id="form" action="">
+                <input id="input" autocomplete="off" placeholder="Type a message..." />
+                <button>Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

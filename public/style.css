@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap');
+
+:root {
+    --wa-teal: #008069;        /* WhatsApp Header Green */
+    --wa-bg: #efeae2;          /* Classic Chat Background */
+    --wa-own: #d9fdd3;         /* Own Message Green */
+    --wa-other: #ffffff;       /* Other Message White */
+    --wa-text: #111b21;        /* Dark Text */
+    --wa-secondary: #667781;   /* Muted Text */
+    --wa-btn: #00a884;         /* Action Green */
+    --border-light: #e9edef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #d1d7db; /* WhatsApp Desktop Background */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#app {
+    width: 95%;
+    max-width: 1400px;
+    height: 95vh;
+    background: var(--wa-bg);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Header --- */
+header {
+    background: var(--wa-teal);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+header h1 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Buttons --- */
+#leave-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+#leave-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* --- Layout --- */
+.main-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+#user-list-sidebar {
+    width: 30%;
+    max-width: 400px;
+    background: white;
+    border-right: 1px solid var(--border-light);
+}
+
+#user-list-sidebar h3 {
+    padding: 15px;
+    font-size: 0.9rem;
+    color: var(--wa-teal);
+}
+
+#users li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f5f6f6;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+#users li::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #dfe5e7;
+    border-radius: 50%; /* WhatsApp Profile Look */
+}
+
+/* --- Chat Window --- */
+#chat-window {
+    flex: 1;
+    padding: 20px 5%;
+    background-color: var(--wa-bg);
+    /* Adding the subtle WhatsApp doodle pattern feel */
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 8px;
+    max-width: 85%;
+}
+
+.message-bubble {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    position: relative;
+    color: var(--wa-text);
+}
+
+.message.own {
+    align-self: flex-end;
+}
+
+.message.own .message-bubble {
+    background: var(--wa-own);
+    border-top-right-radius: 0;
+}
+
+.message.other {
+    align-self: flex-start;
+}
+
+.message.other .message-bubble {
+    background: var(--wa-other);
+    border-top-left-radius: 0;
+}
+
+/* --- Input Area --- */
+#input-area {
+    background: #f0f2f5;
+    padding: 10px 20px;
+}
+
+#form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#input {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+#form button {
+    background: var(--wa-btn);
+    color: white;
+    border-radius: 50%; /* Circle button */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+#form button:hover {
+    background: #008f72;
+}
