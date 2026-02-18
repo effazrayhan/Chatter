@@ -1,6 +1,3 @@
-Here’s your updated `README.md` with a clean, dedicated screenshot section. Just paste this into your repo and drop images into a `/screenshots` folder.
-
-````md
 # Chatter
 
 A real-time chat application built with Node.js, Express, and Socket.IO.
